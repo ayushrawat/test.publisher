@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.mykaarma.test.publisher.model.KaarmaEntityXML;
 
 
@@ -30,7 +32,7 @@ public class DocumentServiceController {
 	}
 	
 	@RequestMapping(value="/saveKaarmaDealerOrderXml", method=RequestMethod.GET)
-	public String saveKaarmaDealerOrderXML()  throws Exception
+	public @ResponseBody String saveKaarmaDealerOrderXML() throws Exception
 	{
 		String ros = "";
 		for(int i=0; i<100; i++) {
@@ -45,6 +47,174 @@ public class DocumentServiceController {
 			LOGGER.info("Pushing "+msgId+" into Mongo");
 			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
 			ros+="TESTING-"+i;
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
+		}
+		for(int i=0; i<100; i++) {
+			String msgId = UUID.randomUUID().toString();
+			String finXml = xml + "<CheckSum>"+msgId+toConcat;
+			KaarmaEntityXML kaarmaEntityXML = new KaarmaEntityXML();
+			kaarmaEntityXML.setDealerID(67l);
+			kaarmaEntityXML.setEntityKey("TESTING-"+i);
+			kaarmaEntityXML.setXml(finXml);
+			kaarmaEntityXML.setMessageID(msgId);
+			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
+			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
 		}
 		return ros;
 	}
