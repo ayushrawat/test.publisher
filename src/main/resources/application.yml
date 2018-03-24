@@ -16,6 +16,7 @@ mongo.replicaPort2: 27012
 mongo.arbiterHost: mongo
 mongo.arbiterPort: 27013
 mongo.W: 1
+mongo.J: true
 mongo.fsync: true
 mongo.connectionsPerHost: 8
 mongo.connectTimeout: 20000
@@ -38,6 +39,7 @@ mongo.replicaPort2: 27018
 mongo.arbiterHost: mongo-arb1.aws.kaar-ma.com
 mongo.arbiterPort: 27019
 mongo.W: 1
+mongo.J: true
 mongo.fsync: true
 mongo.connectionsPerHost: 8
 mongo.connectTimeout: 20000
