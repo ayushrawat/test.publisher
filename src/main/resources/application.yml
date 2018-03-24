@@ -24,6 +24,7 @@ mongo.socketKeepAlive: true
 mongo.socketTimeout: 30000
 mongo.threadsAllowedToBlockForConnectionMultiplier: 4
 
+---
 spring.profiles: prod
 
 mongo.userName: kaarma2015prod
