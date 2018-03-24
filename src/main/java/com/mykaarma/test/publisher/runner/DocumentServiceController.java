@@ -7,20 +7,14 @@ import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.poi.util.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.kaarya.fx.utils.XmlProcessorUtil;
-import com.kaarya.utils.XMLHandler;
-import com.mchange.io.FileUtils;
 import com.mykaarma.test.publisher.model.KaarmaEntityXML;
 
 
@@ -28,6 +22,7 @@ import com.mykaarma.test.publisher.model.KaarmaEntityXML;
 @RequestMapping("/docservice")
 public class DocumentServiceController {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(DocumentServiceController.class);
 	@Autowired
 	private Sender documentService;
 	@Autowired
@@ -40,6 +35,7 @@ public class DocumentServiceController {
 		Resource resource = resourceLoader.getResource("classpath:286952.xml");
 		try {
 			xml = new String(Files.readAllBytes(resource.getFile().toPath()));
+			LOGGER.info("XML Loaded into Memory");
 		} catch (IOException e) {
 			throw e;
 		}
@@ -58,6 +54,7 @@ public class DocumentServiceController {
 			kaarmaEntityXML.setXml(finXml);
 			kaarmaEntityXML.setMessageID(msgId);
 			kaarmaEntityXML.setOriginDate(new Date());
+			LOGGER.info("Pushing "+msgId+" into Mongo");
 			documentService.saveKaarmaROXMLAndPublishToDocQueue(kaarmaEntityXML);
 		}
 		return null;
